@@ -34,7 +34,7 @@ $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"] || "
             width: 100vw;
             height: 100vh;
 
-            background: rgb(0, 0, 0, 0.5);
+            background: rgba(17, 148, 240, 0.25);
             backdrop-filter: blur(5px);
             color: white;
             padding: 2.5rem;
