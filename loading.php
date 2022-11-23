@@ -1,8 +1,8 @@
 <?php
-$development_mode = true;
-$server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"] || "Eample SteamID";
-$server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"] || "Example Mapname";
-$user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"] || "Eample SteamID";
+$development_mode = false;
+$server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
+$server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"];
+$user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
 ?>
 
 
@@ -66,7 +66,7 @@ $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"] || "
 <body>
     <div class="content">
         <p class="welcome_to">Welcome to...</p>
-        <h1 id="server_name">Server Name</h1>
+        <h1 id="server_name">Garry's Mod Server</h1>
         <p class="server_user_details"><strong>SteamID:</strong> <span><?php echo $user_steamid; ?></span>, <strong>Map:</strong> <span><?php echo $server_map; ?></span></p>
     </div>
     <script>
