@@ -1,21 +1,20 @@
 <?php
-// To use this loading screen, use http://{DOMAIN}/?mapname=%m&steamid=%s
-$development_mode = false;
-$server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
-$server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"];
-$user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
-$show_watermark = ($development_mode) ? false : true;
+    // To use this loading screen, use http://{DOMAIN}/?mapname=%m&steamid=%s
+    $development_mode = false;
+    $server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
+    $server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"];
+    $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
+    $show_watermark = !$development_mode;
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Garry's Mod Loading Screen</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap');
@@ -27,7 +26,7 @@ $show_watermark = ($development_mode) ? false : true;
         }
 
         body {
-            background: url("https://raw.githubusercontent.com/Banabyte/hosting-loadingscreen/master/assets/litteraly-a-tree.jpg") no-repeat center center fixed;
+            background: url("./assets/litteraly-a-tree.jpg") no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -71,7 +70,6 @@ $show_watermark = ($development_mode) ? false : true;
     </style>
 
 </head>
-
 <body>
     <div class="content">
         <p class="welcome_to">Welcome to...</p>
@@ -81,16 +79,16 @@ $show_watermark = ($development_mode) ? false : true;
             <p class="watermark">hosted by banabyte.com</p>
         <?php endif; ?>
     </div>
+
     <script>
         function setName(n) {
-            let node = document.getElementById("server_name");
+            const node = document.querySelector(`#server_name`);
             node.innerText = n;
         }
 
         function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language) {
-            setName(n)
+            setName(n);
         }
     </script>
 </body>
-
 </html>
