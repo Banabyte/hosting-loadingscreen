@@ -1,8 +1,10 @@
 <?php
+// To use this loading screen, use
 $development_mode = false;
 $server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
 $server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"];
 $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
+$show_watermark = ($development_mode) ? false : true;
 ?>
 
 
@@ -55,6 +57,13 @@ $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
             font-style: italic;
         }
 
+        .content .watermark {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            font-size: 15px;
+        }
+
         strong {
             font-weight: 600;
             font-style: normal;
@@ -68,6 +77,9 @@ $user_steamid = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
         <p class="welcome_to">Welcome to...</p>
         <h1 id="server_name">Garry's Mod Server</h1>
         <p class="server_user_details"><strong>SteamID:</strong> <span><?php echo $user_steamid; ?></span>, <strong>Map:</strong> <span><?php echo $server_map; ?></span></p>
+        <?php if ($show_watermark) : ?>
+            <p class="watermark">hosted by banabyte.com</p>
+        <?php endif; ?>
     </div>
     <script>
         function setName(n) {
