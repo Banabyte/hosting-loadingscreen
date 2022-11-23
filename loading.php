@@ -1,5 +1,5 @@
 <?php
-// To use this loading screen, use
+// To use this loading screen, use http://{DOMAIN}/?mapname=%m&steamid=%s
 $development_mode = false;
 $server_name = ($development_mode) ? "Example SteamID" :  $_GET["steamid"];
 $server_map = ($development_mode) ? "Example Mapname" : $_GET["mapname"];
