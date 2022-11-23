@@ -27,7 +27,7 @@ $show_watermark = ($development_mode) ? false : true;
         }
 
         body {
-            background: url("./assets/litteraly-a-tree.jpg") no-repeat center center fixed;
+            background: url("https://raw.githubusercontent.com/Banabyte/hosting-loadingscreen/master/assets/litteraly-a-tree.jpg") no-repeat center center fixed;
             background-size: cover;
         }
 
